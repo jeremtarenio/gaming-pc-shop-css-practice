@@ -1,0 +1,285 @@
+/* -------------------------- */
+/* BASIC SETUP */
+/* -------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: white;
+    color: #393939;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+/* -------------------------- */
+/* REUSABLE COMPONENTS */
+/* -------------------------- */
+
+.row {
+    max-width: 1750px;
+    margin: 0 auto;
+    /* this means that top and bot is 0, left and right is auto */
+}
+
+section .row {
+    max-width: 1500px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.box {
+    padding: 1%;
+}
+
+/* ----- HEADINGS ----- */
+
+h1,
+h2,
+h3 {
+    font-weight: 200;
+    /* decrease the font weight because of large font size (design standards) */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 240%;
+    /* 240% of 20px (which is the font-size of the html tag above), for organized future size adjustments */
+    color: white;
+    word-spacing: 4px;
+}
+
+h2 {
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    font-size: 180%
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 110%;
+    margin-bottom: 15px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #b33939;
+    content: "";
+    width: 100px;
+    margin: 30px auto;
+}
+
+/* ----- PARAGRAPHS ----- */
+.long-copy {
+    line-height: 145%;
+    width: 49%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 110%;
+    margin-bottom: 40px;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 140%;
+}
+
+/* ----- ICONS ----- */
+
+.icon-big {
+    font-size: 350%;
+    display: block;
+    color: #b33939;
+    margin-bottom: 15px;
+    margin-left: 140px
+}
+
+.build,
+.clock {
+    margin-left: 120px;
+}
+
+/* ----- BUTTONS ----- */
+
+/* prevents a button from changing its appearance after it has been clicked/visited */
+.btn:link,
+.btn:visited {
+    /* an inline-block element is similar to inline, the only difference is you can apply padding and margin to it */
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: #b33939;
+    border: 1px solid #b33939;
+    color: white;
+    margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #b33939;
+    color: #b33939;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #6d2018;
+    border: 1px solid #6d2018;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    color: white;
+    border: 1px solid #6d2018;
+}
+
+/* -------------------------- */
+/* HEADER */
+/* -------------------------- */
+
+header {
+    /* will consist of two background images, first is the gradient which requires two colors, the two colors could be the same */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/hero.jpg);
+    /* second is the photo itself */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* means that it will cover 100% of the viewport (what's currently shown on the screen) */
+
+}
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    /* 50% away from the top and left */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* trick to center */
+}
+
+.site-name:link,
+.site-name:visited {
+    float: left;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 100;
+    color: #b33939;
+    font-family: 'Impact';
+    text-align: center;
+    transition: color 0.3s, letter-spacing 0.3s;
+    letter-spacing: 3px;
+}
+
+.site-name:hover,
+.site-name:active {
+    color: #6d2018;
+}
+
+.logo {
+    height: 23px;
+    width: auto;
+    margin-top: 19px;
+    float: left;
+    margin-right: 5px;
+}
+
+
+.main-nav {
+    /* the box which containts the li's */
+    float: right;
+    list-style: none;
+    /* removes bullets */
+    margin-top: 20px;
+}
+
+.main-nav li {
+    display: inline-block;
+    /* allows the lists to be side by side */
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    font-size: 90%;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: border 0.3s;
+    padding: 4px 0px;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #b33939;
+}
+
+/* -------------------------- */
+/* GALLERY */
+/* -------------------------- */
+
+.section-gallery {
+    padding: 0px;
+}
+
+.gallery-contents {
+    /* main container */
+    list-style: none;
+    width: 100%;
+    /* entire width */
+}
+
+.gallery-contents li {
+    display: block;
+    float: left;
+    width: 25%;
+    /* 25% of the gallery-contents width */
+}
+
+.gallery-photo-container {
+    overflow: hidden;
+    background-color: black;
+    /* dark effect */
+}
+
+.gallery-photo-container img {
+    opacity: 0.7;
+    /* dark effect */
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    /* zoom effect */
+    transition: transform 0.3s;
+}
+
+.gallery-photo-container img:hover {
+    transform: scale(1.1);
+    /* zoom effect */
+    opacity: 1;
+    /* dark effect */
+}
